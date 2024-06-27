@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="What Matters in Detecting AI-Generated Videos like Sora?">
+  <meta name="keywords" content="What Matters in Detecting AI-Generated Videos like Sora?">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Matters in Detecting AI-Generated Videos like Sora?</title>
+
+  <style>
+    .highlight-box {
+        border: 2px solid #4CAF50;
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: #333;
+    }
+</style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <!-- <link rel="stylesheet" href="./static/css/bulma-slider.min.css"> -->
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <!-- <script src="./static/js/bulma-slider.min.js"></script> -->
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><img src="./static/images/icon.png"
+            style="width:4%;" />What Matters in Detecting AI-Generated Videos like Sora?</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Chirui Chang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://liuzhengzhe.github.io/">Zhengzhe Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://shawlyu.github.io/">Xiaoyang Lyu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://xjqi.github.io/">Xiaojuan Qi</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
+            <span class="author-block"><sup>2</sup>The Chinese University of Hong Kong</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/motivation.mp4"
+                type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advancements in diffusion-based video generation have showcased remarkable results, yet the gap between synthetic and real-world videos remains under-explored. 
+            In this study, we examine this gap from three fundamental perspectives: 
+            appearance, motion, and geometry, comparing real-world videos with those generated by a state-of-the-art AI model, Stable Video Diffusion. 
+            To achieve this, we train three classifiers using 3D convolutional networks, each targeting distinct aspects: 
+            vision foundation model features for appearance, optical flow for motion, and monocular depth for geometry. 
+            Each classifier exhibits strong performance in fake video detection, both qualitatively and quantitatively.  
+            This indicates that AI-generated videos are still easily detectable, and a significant gap between real and fake videos persists.
+            Furthermore, utilizing the Grad-CAM, we pinpoint systematic failures of AI-generated videos in appearance, motion, and geometry.
+            Finally, we propose an Ensemble-of-Experts model that integrates appearance, optical flow, and depth information for fake video detection, resulting in enhanced robustness and generalization ability. 
+            Our model is capable of detecting videos generated by Sora with high accuracy, even without exposure to any Sora videos during training. 
+            This suggests that the gap between real and fake videos can be generalized across various video generative models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <br>
+    <h2 class="title is-3">Empirical Studies and Analysis</h2>
+    <h2 class="title is-5">Comprehensive Video Representation</h2>
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+          To allow the decomposition of a video into individual components, we design a <b>comprehensive video representation (CVR)</b> for video analysis and fake video detection. 
+          <b>CVR</b> is composed of three components:
+        <br />
+        <li> <b>Appearance representation:</b> Instead of simply using the original RGB information, we additionally extract visual feature information from each frame with <b
+          style="color: #cba320">DINOv2</b>, 
+          a vision foundation model, to extract rich high-level features as the appearance representation.
+
+          <br />
+        <li> <b>Motion representation:</b> We leverage optical flow obtained from <b style="color: #cba3cb">RAFT</b> to study the motion patterns between synthetic and real videos due to its ability to capture subtle variations in pixel movement, 
+          enabling precise analysis of dynamics within the video frames.
+
+          <br />
+        <li> <b>Geometry representation:</b> Depth conveys many 2.5D geometric cues, such as occlusion, spatial relationships, scale, and so on. 
+          To investigate the geometric properties of generated videos, we leverage both relative depth from <b style="color: #d12ad1">Marigold</b> and metric depth from <b style="color: #b1801e">UniDepth</b>. 
+          Compared to relative depth, metric depth has a uniform scale and provides better consistency across videos, which helps perceive changes in the geometric structure of the video.
+
+          <br />
+      </div>
+    </div>
+
+    <h2 class="title is-5">Results</h2>
+    We adopt 3D ConvNets to predict whether the video is real or fake with only one of the components of our CVR as input, and the results are listed as follows.<br />
+    <br />
+    <div class="container" style='text-align:center'>
+      <img src="./static/images/result1.png" style="width:75%; " />
+    </div>
+    <br />
+
+    <h2 class="title is-5">Analysis on Appearance</h2>
+    To further understand the classifier's decision criteria, we used Grad-CAM to aid in obtaining a more in-depth analysis.
+    Below are some of the Grad-CAM results from our appearance classifier on different video generation models. 
+    For simplicity, we have shown only excerpts of the generated videos for some examples.<br />
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-steve">
+        <video poster="" id="steve" autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/appearance1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/appearance2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/appearance3.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br />
+    <div class="highlight-box" style="text-align: center;">
+      <em>Generated videos suffer from color inconsistency and texture distortion.</em> 
+    </div>
+    <br />
+
+    <h2 class="title is-5">Analysis on Motion</h2>
+    Below are some of the Grad-CAM results from our motion classifier on different video generation models. 
+    For simplicity, we have shown only excerpts of the generated videos for some examples.<br />
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-steve">
+        <video poster="" id="steve" autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/motion1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/motion2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/motion3.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br />
+    <div class="highlight-box" style="text-align: center;">
+      <em>Video generation models cannot fully reproduce real-world motion patterns and may create unrealistic motion patterns.</em> 
+    </div>
+    <br />
+
+    <h2 class="title is-5">Analysis on Geometry</h2>
+    Below are some of the Grad-CAM results from our geometry classifier on different video generation models. 
+    For simplicity, we have shown only excerpts of the generated videos for some examples.<br />
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-steve">
+        <video poster="" id="steve" autoplay controls muted loop playsinline width="100%">
+          <source src="./static/videos/mdepth1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/mdepth2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-steve">
+        <video poster="" id="steve" controls muted loop playsinline width="100%">
+          <source src="./static/videos/mdepth3.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <br />
+    <div class="highlight-box" style="text-align: center;">
+      <em>Generated videos still cannot fully follow real-world geometry rules with unreal occlusion patterns and inconsistent object scales.</em> 
+    </div>
+    <br />
+    
+    <h2 class="title is-5">Comparison</h2>
+    We compare the ensembled CVR classifier with existing works and the results are listed in the following table.
+    As shown in the table, existing works struggle to detect AI-generated videos in cross-domain settings. 
+    In contrast, our approach, leveraging appearance, motion, and geometry classifiers along with the Ensembled-Experts strategy, consistently outperforms existing works.
+    <br />
+    <br />
+    <div class="container" style='text-align:center'>
+      <img src="./static/images/result2.png" style="width:75%; " />
+    </div>
+  
+  </div>
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template credit to <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
